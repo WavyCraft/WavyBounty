@@ -1,0 +1,13 @@
+name: WavyBounty
+version: 1.0.0
+author: Terpz710
+api : 5.3.0
+main: wavycraft\wavybounty\WavyBounty
+
+permissions:
+  wavybounty.set:
+    default: true
+  wavybounty.list:
+    default: true
+  wavybounty.remove:
+    default: op

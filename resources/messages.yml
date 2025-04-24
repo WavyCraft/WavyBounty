@@ -1,0 +1,24 @@
+# Made by Terpz710 :p
+
+# You may use '&' for color formatting
+
+# This message is for when a player inputs a negative number
+invalid-amount: "&cPlease enter a postive value!"
+
+# This message is when a player already has a bounty
+bounty-already-active: "&c{name} already has an active bounty!"
+
+# This message is when a player doesnt have enough money
+not-enough-money: "§cYou do not have enough money to place this bounty, You have inputted &e${amount}&c but you currently only have &e${balance}&c!"
+
+# This message is when a player successfully sets a bounty
+set-bounty: "You have placed a bounty of &a${amount}&f on &e{name}"
+
+# This message is when a admin removes a players bounty
+removed-bounty: "&aYou have successfully removed {name} bounty!"
+
+# This message is when a player does not have an active bounty
+no-bounty: "&c{name} does not have an active bounty!"
+
+# This message is when a player claims a bounty
+claimed-bounty: "&aYou claimed a bounty of ${amount} on {name}!"

@@ -1,0 +1,16 @@
+{
+    "name": "wavycraft/wavybounty",
+    "type": "project",
+    "license": "GNU General Public License v3.0",
+    "require": {
+        "pocketmine/pocketmine-mp": "^5.0.0",
+        "cortexpe/commando": "*",
+        "terpz710/libmessages": "*",
+        "terpz710/pocketforms": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "WavyBounty\\": "src/WavyBounty"
+        }
+    }
+}
