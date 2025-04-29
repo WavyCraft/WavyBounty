@@ -50,7 +50,7 @@ class SetBountyCommand extends BaseCommand {
         $playerlist = PlayerList::getInstance();
         $bountyAPI = WavyBountyAPI::getInstance();
 
-        if ($playerlist->inFile($target)) {
+        if (!$playerlist->inFile($target)) {
             $sender->sendMessage((string) new Messages($config, "player-does-not-exist", ["{name}"], [$target]));
             return;
         }
