@@ -23,7 +23,7 @@ class EventListener implements Listener {
         $name = $event->getPlayer()->getName();
         $playerlist = PlayerList::getInstance();
 
-        if (!$playerlist->inFile($name) {
+        if (!$playerlist->inFile($name)) {
             $playerlist->insertName($name);
         }
     }
