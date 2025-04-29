@@ -22,7 +22,7 @@ final class PlayerList {
     }
 
     public function inFile(string $name) : bool{
-        return $this->config->exist($name);
+        return $this->config->exists($name);
     }
 
     public function insertName(string $name) : void{
