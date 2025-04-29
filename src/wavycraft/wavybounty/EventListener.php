@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace wavycraft\wavybounty;
 
 use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\entity\EntityDeathEvent;
 
 use pocketmine\player\Player;
@@ -12,12 +13,22 @@ use pocketmine\player\Player;
 use pocketmine\utils\Config;
 
 use wavycraft\wavybounty\api\WavyBountyAPI;
+use wavycraft\wavybounty\player\PlayerList;
 
 use wavycraft\wavyeconomy\api\WavyEconomyAPI;
 
 class EventListener implements Listener {
 
-    public function onEntityDeath(EntityDeathEvent $event) : void{
+    public function join(PlayerJoinEvent $event) : void{
+        $name = $event->getPlayer()->getName();
+        $playerlist = PlayerList::getInstance();
+
+        if (!$playerlist->inFile($name) {
+            $playerlist->insertName($name);
+        }
+    }
+
+    public function death(EntityDeathEvent $event) : void{
         $entity = $event->getEntity();
         $lastDamageCause = $entity->getLastDamageCause();
         $config = new Config(WavyBounty::getInstance()->getDataFolder() . "messages.yml");
