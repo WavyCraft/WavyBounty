@@ -12,6 +12,7 @@ use pocketmine\utils\Config;
 
 use wavycraft\wavybounty\WavyBounty;
 use wavycraft\wavybounty\api\WavyBountyAPI;
+use wavycraft\wavybounty\player\PlayerList;
 
 use wavycraft\wavyeconomy\api\WavyEconomyAPI;
 
@@ -46,7 +47,13 @@ class SetBountyCommand extends BaseCommand {
             return;
         }
 
+        $playerlist = PlayerList::getInstance();
         $bountyAPI = WavyBountyAPI::getInstance();
+
+        if ($playerlist->inFile($target) {
+            $sender->sendMessage((string) new Messages($config, "player-does-not-exist", ["{name}"], [$target]));
+            return;
+        }
 
         if ($bountyAPI->hasBounty($target)) {
             $sender->sendMessage((string) new Messages($config, "bounty-already-active", ["{name}"], [$target]));
