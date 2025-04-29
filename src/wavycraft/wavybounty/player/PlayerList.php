@@ -16,22 +16,29 @@ final class PlayerList {
 
     public function __construct() {
         $dataFolder = WavyBounty::getInstance()->getDataFolder();
-
         @mkdir($dataFolder . "database/");
-        $this->config = new Config($dataFolder . "database/playerlist.json");
+        
+        $this->config = new Config($dataFolder . "database/playerlist.json", Config::JSON, []);
     }
 
     public function inFile(string $name) : bool{
-        return $this->config->exists($name);
+        $list = $this->config->getAll();
+        return in_array($name, $list, true);
     }
 
     public function insertName(string $name) : void{
-        $this->config->set($name);
-        $this->config->save();
+        $list = $this->config->getAll();
+        if (!in_array($name, $list, true)) {
+            $list[] = $name;
+            $this->config->setAll($list);
+            $this->config->save();
+        }
     }
 
     public function removeName(string $name) : void{
-        $this->config->remove($name);
+        $list = $this->config->getAll();
+        $list = array_values(array_filter($list, fn($n) => $n !== $name));
+        $this->config->setAll($list);
         $this->config->save();
     }
 
