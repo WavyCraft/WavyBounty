@@ -12,6 +12,7 @@ use pocketmine\utils\Config;
 
 use wavycraft\wavybounty\WavyBounty;
 use wavycraft\wavybounty\form\BountyForm;
+use wavycraft\wavybounty\api\WavyBountyAPI;
 
 use terpz710\messages\Messages;
 
