@@ -17,7 +17,7 @@ class WavyBounty extends PluginBase {
     protected static self $instance;
 
     protected function onLoad() : void{
-        self::$instance;
+        self::$instance = $this;
     }
 
     protected function onEnable() : void{
