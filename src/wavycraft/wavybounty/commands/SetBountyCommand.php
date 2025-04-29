@@ -63,6 +63,6 @@ class SetBountyCommand extends BaseCommand {
         WavyEconomyAPI::getInstance()->removeMoney($sender->getName(), $amount);
         $bountyAPI->setBounty($target, $amount);
 
-        $sender->sendMessage((string) new Messages($config, "bounty-set", ["{amount}", "{name}"], [number_format($amount), $target]));
+        $sender->sendMessage((string) new Messages($config, "set-bounty", ["{amount}", "{name}"], [number_format($amount), $target]));
     }
 }
