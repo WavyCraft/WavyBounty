@@ -8,6 +8,9 @@ invalid-amount: "&cPlease enter a postive value!"
 # This message is when a player already has a bounty
 bounty-already-active: "&c{name} already has an active bounty!"
 
+# This message is when a player doesnt exist
+player-does-not-exist: "&c{name} does not exist!"
+
 # This message is when a player doesnt have enough money
 not-enough-money: "§cYou do not have enough money to place this bounty, You have inputted &e${amount}&c but you currently only have &e${balance}&c!"
 
